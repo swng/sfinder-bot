@@ -1,0 +1,17 @@
+# DateTime: 2023/11/10 19:07:37
+# Version: 1.42
+# command: percent --tetfu v115@WhR4CezhR4zhJeAgH --patterns [^T]! --clear 4 -K kicks/jstris180.properties -d 180 -fc -1
+# Error message summary:
+  * Should specify equal to or more than 7 pieces: CurrentPieces=6 [FinderInitializeException]
+
+
+------------------------------
+# Stack trace:
+------------------------------
+
+exceptions.FinderInitializeException: Should specify equal to or more than 7 pieces: CurrentPieces=6
+	at entry.Verify.patterns(Verify.java:63)
+	at entry.percent.PercentEntryPoint.run(PercentEntryPoint.java:93)
+	at entry.EntryPointMain.main(EntryPointMain.java:99)
+	at Main.main(Main.java:5)
+==============================
