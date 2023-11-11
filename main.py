@@ -513,7 +513,7 @@ async def on_message(message):
     #   )
 
     logging_message = f"{current_time} - {message.author.name} ({message.author.id}) ran command in \"{message.guild}\": `{message.content}`\n\n Jump url: {message.jump_url}"
-    webhook = config[['logging_webhook']]
+    webhook = config['logging_webhook']
 
     requests.post(webhook, json={"content": logging_message})
 
