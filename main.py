@@ -454,12 +454,12 @@ async def on_command_error(ctx, error):
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     if (hasattr(error, "original")):
       await ctx.reply(
-        f"Uh oh, an error just occured. pls go and tell epicgamer. The error is: {error.original}"
+        f"Uh oh, an error just occured. pls go and tell swng. The error is: {error.original}"
       )
       logging_message = f"{current_time} - {ctx.author.name} ({ctx.author.id}) ran error in \"{ctx.guild}\": `{ctx.message.content}`\nError was: {error.original}\n Jump url: {ctx.message.jump_url}"
     else:
       await ctx.reply(
-        f"Uh oh, an error just occured. pls go and tell epicgamer. The error is: {type(error)}, {error}"
+        f"Uh oh, an error just occured. pls go and tell swng. The error is: {type(error)}, {error}"
       )
       logging_message = f"{current_time} - {ctx.author.name} ({ctx.author.id}) ran error in \"{ctx.guild}\": `{ctx.message.content}`\nError was: {type(error)}, {error}\n Jump url: {ctx.message.jump_url}"
 
@@ -1319,7 +1319,7 @@ async def tofumen(ctx, preset=None):
     folderpath = f"rgbShorthands/{preset.lower()}.json"
     if not path.exists(folderpath):
       await ctx.reply(
-        "Preset does not exist (check help for the full list or ping epic to add)\n"
+        "Preset does not exist (check help for the full list or ping swng to add)\n"
       )
       return
     open(f"__userdata/{ctx.author.id}/toFumenRGB.json",
@@ -2253,7 +2253,7 @@ async def calibrate(ctx, preset=None):
     folderpath = f"rgbShorthands/{preset.lower()}.json"
     if not path.exists(folderpath):
       await ctx.reply(
-        "Game preset does not exist (check help for the full list or ping epic to add)\n"
+        "Game preset does not exist (check help for the full list or ping swng to add)\n"
         + folderpath)
       return
 
@@ -2653,16 +2653,17 @@ async def setup_cover(ctx,
 
 @bot.command()
 async def catgirl(ctx):
-  url = "https://drake-pi.huycao1.repl.co/catgirl/"
-  # Fetch the image from the URL
-  response = requests.get(url)
-  response.raise_for_status(
-  )  # Raise an error if the request was not successful
+  # url = "https://drake-pi.huycao1.repl.co/catgirl/"
+  # # Fetch the image from the URL
+  # response = requests.get(url)
+  # response.raise_for_status(
+  # )  # Raise an error if the request was not successful
 
-  # Send the image in the Discord channel
-  image_bytes = response.content
-  file = discord.File(io.BytesIO(image_bytes), filename="catgirl.png")
-  await ctx.send(file=file)
+  # # Send the image in the Discord channel
+  # image_bytes = response.content
+  # file = discord.File(io.BytesIO(image_bytes), filename="catgirl.png")
+  # await ctx.send(file=file)
+  await ctx.reply("bruh what is wrong w/ u")
 
 
 # if the missage link is in a dm, use dm_uid to get the channel object
@@ -3575,7 +3576,7 @@ async def place_piece(ctx, fumen = None, game = "tetrio", drop = "instant"):
 
   output = open(output_file, "r").read().splitlines()
   if output == "":
-    await ctx.reply("Empty file, nothing found? Tell epic pls :D")
+    await ctx.reply("Empty file, nothing found? Tell swng pls :D")
     return
 
   if output[0] == "fuck you":
